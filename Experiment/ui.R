@@ -70,7 +70,7 @@ dashboardPage(
                   column(3,
                          fluidRow(box(width = 12,h3(textOutput('timeleft')),
                                       textOutput('item_desc'),
-                                      textOutput('promo_desc')
+                                     
                          )),
                          fluidRow(
                            box(width = 12, textOutput('info')
@@ -78,7 +78,7 @@ dashboardPage(
                          ),
                          fluidRow(
                            box(width = 12,
-                               uiOutput('normal_sales_val'),
+                               uiOutput('adjustment_demand_val'),
                                uiOutput('submit')
                            )
                          )
