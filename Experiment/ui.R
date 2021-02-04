@@ -19,7 +19,7 @@ library(shinyalert)
 library(slickR)
 dashboardPage(
   
-  dashboardHeader(title="Demand Planner"),
+  dashboardHeader(title="Forecast Adjuster"),
   dashboardSidebar(div(style="overflow-y: scroll"),
                    sidebarMenu(
                      textInput(inputId= "text1" ,  label =  "Please enter your index number to start the experiment" ),
@@ -33,8 +33,21 @@ dashboardPage(
    
     
     tabItems(
-      
-        
+     
+      tabItem(tabName = 'task_description',
+              fluidPage(
+                fluidRow(
+                  box(width = 12,h3( textOutput('title'))
+                  )
+                  
+                ),
+                fluidRow(box(width = 12,
+                             slickROutput("slickr", width="500px")
+                )
+                )
+                
+              )
+              ),
               
       tabItem(tabName = 'basic_info',
               fluidPage(

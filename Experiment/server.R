@@ -47,9 +47,16 @@ shinyServer(function(input, output,session) {
             footer = NULL
         ))
     }) 
-
+    
     ########### Plan #########################  
     output$info <- renderText("Multiple Adjustment is the adjustment of previously adjusted forecast. You are given a system generated forecast and the first manual adjustment for a functional product. If you feel the first adjustment is sufficient, enter the same value in the value box below. Or else you can adjust based on the given factors and enter the final adjustment in the value box. ")
     output$item_desc <- renderText(paste('Item :Functional Product'))
-
+    
+    ########### Task Description #########################  
+    output$title <- renderText("Please enter your index number to start the experiment")
+  
+    output$slickr <- renderSlickR({
+      imgs <- list.files("/Users/thenuka/Desktop/images/", pattern=".jpeg", full.names = TRUE)
+      slickR(imgs)
+    })
 })
